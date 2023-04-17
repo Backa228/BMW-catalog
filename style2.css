@@ -1,0 +1,422 @@
+/*1 - 1 рядок, 2 машини
+2 - 2 рядка, 5 машин
+3 - 2 рядка, 4 машини
+4 - 2 рядка, 4 машини
+5 - 1 рядок, 2 машини
+6 - 1 рядок, 1 машина
+7 - 1 рядок, 2 машини
+8 - 2 рядка, 6 машин
+9 - 7 рядків, 19 машин*/
+
+body
+{
+	font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #4D4D4D;
+}
+
+html
+{
+    box-sizing: border-box;
+}
+
+*, *; before, *after
+{
+    box-sizing: inherit;
+}
+
+.flex-nav img
+{
+    width: 66px;
+    height: 66px;
+}
+
+.flex-nav a
+{
+    /*background: rgba(77, 0, 0, 0.2);*/
+    color: #4D4D4D;
+    text-decoration: none;
+    padding: 20px 5px;
+    width: 100%;
+    text-align: center;
+    font-weight: 400;/*вага жирнисть шрыфту*/
+    letter-spacing: 2;
+}
+
+/*.AAA
+{
+    margin-left: 10%;
+    margin-right: 10%;
+}*/
+
+.numbers a:active
+{
+    transition: 1s;
+}
+
+.numbers
+{
+    display: flex;
+}
+
+.numbers a
+{
+    text-decoration: none;
+    color: white;
+    border-bottom: 3px solid #4D4D4D;
+}
+
+.numbers a:hover h1/*при наведенни курсору миши*/
+{
+    border-bottom: 3px solid white;
+}
+
+.flex-nav a:hover
+{
+    color: black;
+}
+
+.flex-nav i
+{
+    color: black;
+}
+
+ul
+{
+    list-style: none;
+}
+
+.wrapper
+{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+} 
+
+.flex-nav ul
+{
+    background-color: #DEDEDE;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 0;
+    padding: 10px 20px;
+    align-items: 10px 20px;
+
+}
+
+.flex-nav .links
+{
+   flex-grow: 3;
+}
+
+.flex-nav .lupa
+{
+   flex-grow: 1;
+   font-size: 20px;
+}
+
+.flex-nav .social
+{
+   flex-grow: 0;
+   padding-left: 70px;
+   font-size: 20px;
+}
+
+.flex-nav img
+{
+   flex-grow: 1;
+}
+
+.catalog
+{
+    display: grid;
+    grid-gap: 10px;
+    background-color: #DEDEDE;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 10px;
+}
+
+.catalog1
+{
+    grid-template-columns: repeat(3, minmax(300px,1fr));
+    grid-template-rows: repeat(1, 1fr);
+}
+
+.catalog2
+{
+    grid-template-columns: repeat(3, minmax(300px,1fr));
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.catalog3
+{
+    grid-template-columns: repeat(3, minmax(300px,1fr));
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.catalog4
+{
+    grid-template-columns: repeat(3, minmax(300px,1fr));
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.catalog5
+{
+    grid-template-columns: repeat(3, minmax(300px,1fr));
+    grid-template-rows: repeat(1, 1fr);
+}
+
+.catalog6
+{
+    grid-template-columns: repeat(3, minmax(300px,1fr));
+    grid-template-rows: repeat(1, 1fr);
+}
+
+.catalog7
+{
+    grid-template-columns: repeat(3, minmax(300px,1fr));
+    grid-template-rows: repeat(1, 1fr);
+}
+
+.catalog8
+{
+    grid-template-columns: repeat(3, minmax(300px,1fr));
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.catalog9
+{
+    grid-template-columns: repeat(3, minmax(300px,1fr));
+    grid-template-rows: repeat(1, 1fr);
+}
+
+h1
+{
+    color: white;
+    margin-left: 25px;
+    font-size: 33px;
+}
+
+.carmodel
+{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+}
+
+.carmodel h2
+{
+    font-size: 17px;
+    color: #4D4D4D;
+}
+
+.carmodel h3
+{
+    font-size: 15px;
+    color: #4D4D4D;
+}
+
+.new
+{
+    background-color: #4D4D4D;
+    border-radius: 10px;
+    color: white;
+    position: relative;
+}
+
+.new .newTitle
+{
+    position: absolute;
+    right: 7px;
+    top: 5px;
+    font-size: 13px;
+    background-color: #DEDEDE;
+    padding: 3px;
+    border-radius: 5px;
+    color: #4D4D4D;
+}
+
+.alt
+{
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+}
+
+.carmodel img:hover
+{
+    transition: 0.5s;
+    transform: scale(1.2);
+}
+
+.carmodel img
+{
+    transition: 0.5s;
+}
+
+.new h2, .new h3
+{
+    color: white;
+}
+
+.carmodel img
+{
+    width: 110%;
+}
+
+footer
+{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px,1fr));
+    color: #DEDEDE;
+    grid-gap: 10px;
+    background-color: #DEDEDE;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 10px;
+}
+
+footer h1
+{
+    margin-left: 0;
+    color: black;
+}
+
+.grid1, .grid2, .grid3
+{
+    justify-self: center;
+    align-self: start;
+    /*border: 2px solid black;*/
+    text-align: center;
+}
+
+.grid1 a, .grid2 a, .grid3 a
+{
+    color: #4D4D4D;
+    text-decoration: none;
+}
+
+.grid1 a:hover, .grid2 a:hover, .grid3 a:hover
+{
+    color: #909090;
+    /*opacity: 0.5; он задает уровень прозрачности*/
+}
+
+:root
+{
+    gray-color: #DEDEDE;
+}
+
+:root
+{
+    darkgray-color: #4D4D4D;
+}
+
+@media all and (max-width: 1000px)
+{
+    body
+    {
+        /*background-color: yellowgreen;
+        color: black;*/
+    }
+
+    .flex-nav ul
+    {
+        flex-wrap: wrap;
+    }
+
+    .flex-nav ul
+    {
+        flex: 1 1 50%;
+    }
+
+    .flex-nav li
+    {
+        flex: 1 1 100%;
+        align-self: center;
+    }
+
+    .flex-nav .lupa
+    {
+        flex: 50%;
+    }
+
+    .flex-nav #iconlupa
+    {
+        padding-right: 50%;
+        align-self: center;
+    }
+
+    .flex-nav .social
+    {
+        flex: 1 1 25%;
+        align-self: center;
+        padding-left: 0;
+    }
+
+    .flex-nav .links
+    {
+        flex-grow: 4;
+    }
+
+    .catalog
+    {
+        grid-template-columns: repeat(2, minmax(200px,1fr));
+    }
+
+    .new h2
+    {
+        font-size: minmax(15px);
+    }
+
+    .new h3
+    {
+        font-size: minmax(10px);
+    }
+
+    footer
+    {
+        grid-template-columns: repeat(1, minmax(300px,1fr));
+    }
+}
+
+
+@media all and (max-width: 600px)
+{
+    body
+    {
+        /*background-color: green ;
+        color: red;*/
+    }
+
+    .catalog
+    {
+        grid-template-columns: repeat(1, minmax(300px,1fr));
+    }
+
+    .new h2
+    {
+        font-size: minmax(10px);
+    }
+
+    .new h3
+    {
+        font-size: minmax(5px);
+    }
+
+    footer
+    {
+        grid-template-columns: repeat(1, minmax(300px,1fr));
+    }
+}
