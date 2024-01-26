@@ -57,6 +57,8 @@ html
 .numbers
 {
     display: flex;
+    align-items: center;
+    margin-left: 10px;
 }
 
 .numbers a
@@ -64,9 +66,16 @@ html
     text-decoration: none;
     color: white;
     border-bottom: 3px solid #4D4D4D;
+    padding: 7px 15px;
 }
 
-.numbers a:hover h1/*при наведенни курсору миши*/
+.numbers a h1
+{
+    text-align: center;
+    margin: 0;
+}
+
+.numbers a:hover/*при наведенни курсору миши*/
 {
     border-bottom: 3px solid white;
 }
@@ -88,9 +97,7 @@ ul
 
 .wrapper
 {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 50px;
+    margin: 10px 20px;
 } 
 
 .flex-nav ul
@@ -111,11 +118,12 @@ ul
 .flex-nav .links
 {
    flex-grow: 3;
+   font-size: large;
 }
 
 .flex-nav .lupa
 {
-   flex-grow: 1;
+   flex-grow: 0;
    font-size: 20px;
 }
 
@@ -131,6 +139,11 @@ ul
    flex-grow: 1;
 }
 
+hr 
+{
+margin: 0;
+}
+
 .catalog
 {
     display: grid;
@@ -140,7 +153,7 @@ ul
     border-radius: 10px;
     margin: 20px;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 10px;
     padding: 10px;
 }
 
@@ -253,7 +266,7 @@ h1
     color: white;
 }
 
-.carmodel img:hover
+.carmodel a img:hover
 {
     transition: 0.5s;
     transform: scale(1.2);
@@ -323,6 +336,27 @@ footer h1
     darkgray-color: #4D4D4D;
 }
 
+#scrollToTopButton
+{
+    display: none;
+    position: fixed;
+    bottom: 20px;    
+    right: 20px;
+    padding: 10px 10px;
+    background-color: #A5A5A5;
+    color: #4D4D4D;
+    font-size: 20px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#scrollToTopButton:hover
+{
+    background-color: #A4A4A4;
+}
+
 @media all and (max-width: 1000px)
 {
     body
@@ -336,20 +370,10 @@ footer h1
         flex-wrap: wrap;
     }
 
-    .flex-nav ul
-    {
-        flex: 1 1 50%;
-    }
-
-    .flex-nav li
+    .flex-nav .links
     {
         flex: 1 1 100%;
         align-self: center;
-    }
-
-    .flex-nav .lupa
-    {
-        flex: 50%;
     }
 
     .flex-nav #iconlupa
@@ -420,3 +444,243 @@ footer h1
         grid-template-columns: repeat(1, minmax(300px,1fr));
     }
 }
+
+.details
+{
+    position: fixed;
+    width: 80vw;/*vw - відносно width*/
+    height: 100vh;/*vh - відносно height*/
+    background-color: #A5A5A5;
+    /*border: 2px solid black;*/
+    /*top: 0px;
+    right: 0px;*/
+    z-index: 1;
+    display: none;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+    animation-name: detailesAnimation;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;/* визначає криву швидкості анімації*/
+    animation-fill-mode: forwards;
+    transform-origin: center center;
+    /*polygon(лівий верхній кут, правий верхній кут, правий нижній кут, ливій нижній кут);*/
+}
+
+@keyframes detailesAnimation {
+
+    0%
+    {
+        transform: scale(0);
+        opacity: 0;
+        border-radius: 17px;
+    }
+
+    50%
+    {
+        transform: scale(0.5);
+        opacity: 0.75;
+        border-radius: 15px;
+    }
+
+    100%
+    {
+        transform: scale(1);
+        opacity: 1;
+        top: 0px;
+        left: 20vw;
+    }
+}
+
+.line
+{
+    width: 80vw;
+    height: 100vh;
+    position: absolute;
+}
+.line1
+{
+    clip-path: polygon(10% 0, 13% 0, 3% 100%, 0 100%);
+    background-color: #0A5FAC;
+}
+.line2
+{
+    clip-path: polygon(10% 0, 13% 0, 3% 100%, 0 100%);
+    background-color: #013976;
+    left: 3%;
+}
+.line3
+{
+    clip-path: polygon(10% 0, 13% 0, 3% 100%, 0 100%);
+    background-color: #E5230E;
+    left: 6%;
+}
+
+.details_content img
+{
+    transform: scale(0.9);
+    padding: 0px;
+    position: relative;
+    top: 5vh;
+    right: 16%;
+}
+
+.details_content h2
+{
+    font-size: xx-large; 
+    margin: 0px; 
+}
+
+.details_content h4
+{
+    font-size: 24px; 
+    margin: 0px; 
+}
+
+.details_content p
+{
+    font-size: 18px;  
+    text-align: left;
+}
+
+.details_content
+{
+    width: 50vw;
+    position: absolute;
+    left: 20%;
+    bottom: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    margin: 0px;
+}
+
+.close
+{
+   position: absolute;
+   top: 5vh;
+   right: 5vh;
+   font-size: xx-large;
+   text-decoration: none;
+   color: #4D4D4D;
+}
+
+.learn_more
+{
+    border: 5px solid #013976;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: large;
+    align-self: center;
+    margin-top: 10px;
+}
+.learn_more a
+{
+    color: #4D4D4D;
+    text-decoration: none;
+}
+
+.learn_more:hover
+{
+    background-color: #DEDEDE;
+}
+
+.overlay {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    z-index: 1;
+}
+
+.circle
+{
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 50vw;
+    top: 50vh;
+    /*transform: translate(-50%, -50%);*/
+
+} 
+
+.circle-animation
+{
+     animation-name: white-circle;
+    animation-duration: 2s, 2s;
+    animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    /*animation-iteration-count: 10;
+    animation-direction: ;*/
+}
+
+.details-animation
+{
+    animation-name: window;
+    animation-duration: 2s;/*тривалість анімації*/
+    animation-timing-function: linear;/*встановлює не лінійну швидкість ефекту переходу*/
+    animation-iteration-count: 1;
+  /*  animation-direction: alternate;*/
+}
+
+.win
+{
+    position: absolute;
+    z-index: 1000;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+@keyframes window
+{
+    0%
+    {
+        transform: translateX(-150%);
+    }
+
+    50%
+    {
+        transform: translateX(-75%);
+
+    }
+
+    100%
+    {
+        transform: translateX(0);
+
+    }
+}
+
+@keyframes window
+{
+    0%
+    {
+
+    }
+
+    100%
+    {
+
+    }
+}
+
+@keyframes white-circle{
+0%
+{
+    width: 50px;
+    height: 50px;
+
+}
+
+100%
+{
+    width: 200px;
+    height: 200px;
+}
+}
+
